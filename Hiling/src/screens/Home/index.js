@@ -6,7 +6,7 @@ import { View, Text, TextInput, Pressable }
 import Icon from "react-native-vector-icons/FontAwesome5";
 import styles from "./styles";
 
-const HomeScreen = (props) => {
+const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.homeBanner}>

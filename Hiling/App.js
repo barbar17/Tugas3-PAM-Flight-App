@@ -24,7 +24,7 @@ const App: () => React$Node = () => {
     //     </SafeAreaView>
     //   </ScrollView>
     // </SafeAreaView>
-    <SafeAreaView>
+    <SafeAreaView style={styles.background}>
       <SafeAreaView style={styles.nav}>
         <Icon
           style={styles.navBar} name="arrow-left" size={25} color='white'
