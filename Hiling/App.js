@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
   navText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 30,
-    top: 22,
+    fontSize: 25,
+    top: 25,
     alignSelf: 'center',
   }
 });

@@ -8,57 +8,152 @@ import styles from "./styles-jadwal";
 
 const Jadwal = [
     {
-        jadwal_id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        title: 'First Item',
-        bandara_kode_keberangkatan: 'RI',
-        bandara_kode_tujuan: 'SHI',
+        jadwal_id: 'PD1',
+        bandara_kode_keberangkatan: 'TKG',
+        bandara_nama_keberangkatan: 'Radin Inten II',
+        bandara_kode_tujuan: 'JKT',
+        bandara_nama_tujuan: 'Jakarta',
+        maskapai_id: 'JT',
+        maskapai_nama: 'Lion Air',
+        maskapai_logo: 'plane',
+        tanggal: '14/03/2022',
+    },
+    {
+        jadwal_id: 'PD2',
+        bandara_kode_keberangkatan: 'TKG',
+        bandara_nama_keberangkatan: 'Radin Inten II',
+        bandara_kode_tujuan: 'DPS',
+        bandara_nama_tujuan: 'Ngurah Rai',
         maskapai_id: 'GI',
+        maskapai_nama: 'Garuda Indonesia',
+        maskapai_logo: 'plane',
+        tanggal: '14/03/2022',
     },
     {
-        jadwal_id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        title: 'Second Item',
-        bandara_kode_keberangkatan: 'ING',
-        bandara_kode_tujuan: 'JA',
-        maskapai_id: 'CL',
+        jadwal_id: 'PD3',
+        bandara_kode_keberangkatan: 'TKG',
+        bandara_nama_keberangkatan: 'Radin Inten II',
+        bandara_kode_tujuan: 'PDG',
+        bandara_nama_tujuan: 'Minangkabau',
+        maskapai_id: 'ID',
+        maskapai_nama: 'Batik Air',
+        maskapai_logo: 'plane',
+        tanggal: '15/03/2022',
     },
     {
-        jadwal_id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        title: 'Third Item',
-        bandara_kode_keberangkatan: 'RI',
-        bandara_kode_tujuan: 'PL',
-        maskapai_id: 'SA',
+        jadwal_id: 'PD4',
+        bandara_kode_keberangkatan: 'JKT',
+        bandara_nama_keberangkatan: 'Jakarta',
+        bandara_kode_tujuan: 'DPS',
+        bandara_nama_tujuan: 'Ngurah Rai',
+        maskapai_id: 'JT',
+        maskapai_nama: 'Lion Air',
+        maskapai_logo: 'plane',
+        tanggal: '15/03/2022',
+    },
+    {
+        jadwal_id: 'PD5',
+        bandara_kode_keberangkatan: 'JKT',
+        bandara_nama_keberangkatan: 'Jakarta',
+        bandara_kode_tujuan: 'KOE',
+        bandara_nama_tujuan: 'El Tari',
+        maskapai_id: 'SJ',
+        maskapai_nama: 'Sriwijaya Air',
+        maskapai_logo: 'plane',
+        tanggal: '16/03/2022',
+    },
+    {
+        jadwal_id: 'PD6',
+        bandara_kode_keberangkatan: 'CGK',
+        bandara_nama_keberangkatan: 'Soekarno-Hatta',
+        bandara_kode_tujuan: 'PDG',
+        bandara_nama_tujuan: 'Minangkabau',
+        maskapai_id: 'GI',
+        maskapai_nama: 'Garuda Indonesia',
+        maskapai_logo: 'plane',
+        tanggal: '16/03/2022',
+    },
+    {
+        jadwal_id: 'PD7',
+        bandara_kode_keberangkatan: 'CGK',
+        bandara_nama_keberangkatan: 'Soekarno-Hatta',
+        bandara_kode_tujuan: 'TKG',
+        bandara_nama_tujuan: 'Radin Inten II',
+        maskapai_id: 'QG',
+        maskapai_nama: 'Citylink',
+        maskapai_logo: 'plane',
+        tanggal: '17/03/2022',
+    },
+    {
+        jadwal_id: 'PD8',
+        bandara_kode_keberangkatan: 'DPS',
+        bandara_nama_keberangkatan: 'Ngurah Rai',
+        bandara_kode_tujuan: 'TKG',
+        bandara_nama_tujuan: 'Radin Inten II',
+        maskapai_id: 'ID',
+        maskapai_nama: 'Batik Air',
+        maskapai_logo: 'plane',
+        tanggal: '17/03/2022',
+    },
+    {
+        jadwal_id: 'PD9',
+        bandara_kode_keberangkatan: 'KOE',
+        bandara_nama_keberangkatan: 'El Tari',
+        bandara_kode_tujuan: 'CGK',
+        bandara_nama_tujuan: 'Soekarno-Hatta',
+        maskapai_id: 'QG',
+        maskapai_nama: 'Citylink',
+        maskapai_logo: 'plane',
+        tanggal: '18/03/2022',
+    },
+    {
+        jadwal_id: 'PD10',
+        bandara_kode_keberangkatan: 'PDG',
+        bandara_nama_keberangkatan: 'Minangkabau',
+        bandara_kode_tujuan: 'CGK',
+        bandara_nama_tujuan: 'Soekarno-Hatta',
+        maskapai_id: 'SJ',
+        maskapai_nama: 'Sriwijaya Air',
+        maskapai_logo: 'plane',
+        tanggal: '18/03/2022',
     },
 ];
 
-const Item = ({ maskapai_id, bandara_kode_keberangkatan, bandara_kode_tujuan }) => (
+const Item = ({ maskapai_logo, maskapai_nama, bandara_nama_keberangkatan, bandara_nama_tujuan, tanggal }) => (
     <View style={styles.item}>
         <View style={styles.itemLeft}>
             <View style={styles.itemOnTop}>
-                <Text>{bandara_kode_keberangkatan}</Text>
+                <Text style={styles.perjalanan}>Dari: {bandara_nama_keberangkatan}</Text>
             </View>
             <View style={styles.itemOnBottom}>
-                <Text style={styles.title}>{maskapai_id}</Text>
+                <Icon style={styles.maskapaiLogo} name={maskapai_logo} size={18} color='green' />
+                <Text style={styles.maskapaiNama}>{maskapai_nama}</Text>
             </View>
         </View>
         <View style={styles.itemRight}>
             <View style={styles.itemOnTop}>
-                <Text>{bandara_kode_tujuan}</Text>
+                <Text style={styles.perjalanan}>Tujuan: {bandara_nama_tujuan}</Text>
             </View>
             <View style={styles.itemOnBottom}>
-                <Text style={styles.title}>HAIHAI</Text>
+                <Text style={styles.tanggal}>({tanggal})</Text>
             </View>
         </View>
     </View>
 );
 
 const JadwalScreen = () => {
+    const cariMaskapai = (props) => (
+        a
+    );
+
     const renderItem = ({ item }) => (
         <Item
-            title={item.title}
-            bandara_kode_keberangkatan={item.bandara_kode_keberangkatan}
-            bandara_kode_tujuan={item.bandara_kode_tujuan}
-            maskapai_id={item.maskapai_id} />
-
+            bandara_nama_keberangkatan={item.bandara_nama_keberangkatan}
+            bandara_nama_tujuan={item.bandara_nama_tujuan}
+            maskapai_nama={item.maskapai_nama}
+            tanggal={item.tanggal}
+            maskapai_logo={item.maskapai_logo}
+        />
     );
 
     return (

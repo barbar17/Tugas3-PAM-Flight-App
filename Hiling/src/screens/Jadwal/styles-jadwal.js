@@ -24,9 +24,11 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     itemOnTop: {
+        justifyContent: "center",
         flex: 1,
     },
     itemOnBottom: {
+        justifyContent: "center",
         flex: 1,
     },
     itemRight: {
@@ -36,6 +38,23 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
     },
+    tanggal: {
+        paddingTop: 3,
+        fontSize: 14,
+        color: 'blue',
+    },
+    maskapaiNama: {
+        position: "absolute",
+        fontWeight: 'bold',
+        fontSize: 14,
+        left: 25,
+    },
+    maskapaiLogo: {
+        position: "absolute",
+    },
+    perjalanan: {
+        fontSize: 12,
+    }
 });
 
 export default styles;
