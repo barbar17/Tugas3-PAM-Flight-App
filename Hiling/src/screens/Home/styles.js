@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 650,
+        height: 672,
         alignItems: 'center',
+        backgroundColor: 'lightgrey',
     },
     homeBanner: {
         width: '100%',
-        height: 400,
+        height: 350,
         backgroundColor: 'lightgreen',
         borderBottomStartRadius: 10,
         borderBottomEndRadius: 10,
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
 
     },
     homeBannerText: {
-        top: 50,
+        top: 10,
         color: 'white',
         fontWeight: 'bold',
         fontSize: 25,
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         position: 'absolute',
         zIndex: 100,
-        top: 100,
+        top: 125,
         borderRadius: 10,
         padding: 20,
     },
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
         borderColor: '#777',
-        fontSize: 20,
+        fontSize: 14,
         flex: 2.5,
     },
     kotakInputText: {
@@ -79,6 +80,34 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 10,
         color: 'green',
         flex: 0.5,
+    },
+    copyright: {
+        position: 'absolute',
+        bottom: 150,
+        alignSelf: 'center',
+    },
+    nav: {
+        backgroundColor: 'lightgreen',
+        width: '100%',
+        height: 70,
+    },
+    navBar: {
+        position: 'absolute',
+        left: 20,
+        top: 30,
+    },
+    navUser: {
+        position: 'absolute',
+        right: 20,
+        top: 30,
+
+    },
+    navText: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 25,
+        top: 100,
+        alignSelf: 'center',
     }
 });
 

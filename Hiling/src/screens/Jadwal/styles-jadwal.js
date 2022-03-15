@@ -1,20 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    homeBanner: {
-        width: '100%',
-        height: 40,
-        backgroundColor: 'lightgreen',
-        borderBottomStartRadius: 10,
-        borderBottomEndRadius: 10,
-        alignItems: 'center',
-    },
     item: {
-        backgroundColor: 'white',
+        backgroundColor: 'gold',
         height: 100,
         justifyContent: 'center',
         padding: 20,
-        marginVertical: 10,
+        marginVertical: 5,
         marginHorizontal: 15,
         flex: 1,
         flexDirection: "row",
@@ -54,6 +46,29 @@ const styles = StyleSheet.create({
     },
     perjalanan: {
         fontSize: 12,
+    },
+    nav: {
+        backgroundColor: 'lightgreen',
+        width: '100%',
+        height: 70,
+    },
+    navBar: {
+        position: 'absolute',
+        left: 20,
+        top: 30,
+    },
+    navUser: {
+        position: 'absolute',
+        right: 20,
+        top: 30,
+
+    },
+    navText: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 25,
+        top: 25,
+        alignSelf: 'center',
     }
 });
 

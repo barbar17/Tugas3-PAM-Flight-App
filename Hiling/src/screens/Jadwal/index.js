@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import { View, FlatList, Text }
+import { View, FlatList, Text, TextInput }
     from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome5";
@@ -141,10 +141,46 @@ const Item = ({ maskapai_logo, maskapai_nama, bandara_nama_keberangkatan, bandar
     </View>
 );
 
-const JadwalScreen = () => {
-    const cariMaskapai = (props) => (
-        a
-    );
+const JadwalScreen = ({ navigation }) => {
+
+    const [filteredData, setfilteredData] = useState([]);
+
+    useEffect(() => {
+        filterCari(navigation.getParam('lokasiBerangkat'), navigation.getParam('lokasiTujuan'), navigation.getParam('tanggalBerangkat'));
+        return () => {
+
+        }
+    }, [])
+
+    const filterCari = (lokasiBerangkat, lokasiTujuan, tanggalBerangkat) => {
+        if (lokasiBerangkat) {
+            const newData = Jadwal.filter((item) => {
+                const itemData = item.bandara_nama_keberangkatan ? item.bandara_nama_keberangkatan : '';
+                const textData = lokasiBerangkat
+                return itemData.indexOf(textData) > -1;
+            });
+            setfilteredData(newData);
+        }
+        else if (lokasiTujuan) {
+            const newData = Jadwal.filter((item) => {
+                const itemData = item.bandara_nama_tujuan ? item.bandara_nama_tujuan : '';
+                const textData = lokasiTujuan
+                return itemData.indexOf(textData) > -1;
+            });
+            setfilteredData(newData);
+        }
+        else if (tanggalBerangkat) {
+            const newData = Jadwal.filter((item) => {
+                const itemData = item.tanggal ? item.tanggal : '';
+                const textData = tanggalBerangkat
+                return itemData.indexOf(textData) > -1;
+            });
+            setfilteredData(newData);
+        }
+        else {
+            setfilteredData(Jadwal);
+        }
+    };
 
     const renderItem = ({ item }) => (
         <Item
@@ -158,12 +194,25 @@ const JadwalScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.homeBanner} />
-            <FlatList
-                data={Jadwal}
-                renderItem={renderItem}
-                keyExtractor={item => item.jadwal_id}
-            />
+            <View style={styles.nav}>
+                <Icon
+                    style={styles.navBar} name="arrow-left" size={25} color='white'
+                    onPress={() => navigation.goBack()} />
+                <Text style={styles.navText}>Hiling.id</Text>
+                <Icon
+                    style={styles.navUser} name="user" size={25} color='white'
+                    onPress={() => console.warn("icon user ditekan!")} />
+            </View>
+            <Text>
+                Hasil Pencarian dari "{navigation.getParam('lokasiBerangkat')}"
+            </Text>
+            <View>
+                <FlatList
+                    data={filteredData}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.jadwal_id}
+                />
+            </View>
         </View >
     );
 };
