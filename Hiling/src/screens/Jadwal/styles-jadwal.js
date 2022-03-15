@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     nav: {
         backgroundColor: 'lightgreen',
         width: '100%',
-        height: 70,
+        height: 100,
     },
     navBar: {
         position: 'absolute',
@@ -69,6 +69,13 @@ const styles = StyleSheet.create({
         fontSize: 25,
         top: 25,
         alignSelf: 'center',
+    },
+    hasilCari: {
+        alignSelf: 'center',
+        top: 35,
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
     }
 });
 

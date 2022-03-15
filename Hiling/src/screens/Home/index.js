@@ -8,8 +8,7 @@ import DatePicker from "react-native-datepicker";
 const HomeScreen = ({ navigation }) => {
     const [cariLokasiBerangkat, setcaricariLokasiBerangkat] = useState('');
     const [cariLokasiTujuan, setcariLokasiTujuan] = useState('');
-    const [cariTanggalBerangkat, setcariTanggalBerangkat] = useState('');
-    const [date, setDate] = useState('09-10-2021');
+    const [date, setDate] = useState('15-03-2022');
 
     return (
         <ScrollView>
@@ -38,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
                         <TextInput
                             style={styles.kotakInput}
                             placeholder='Masukkan Lokasi Keberangkatan'
-                            value={cariLokasiBerangkat}
+                            // value={cariLokasiBerangkat}
                             onChangeText={(text) => setcaricariLokasiBerangkat(text)}
                         />
                     </View>
@@ -60,29 +59,25 @@ const HomeScreen = ({ navigation }) => {
                         Tanggal Keberangkatan
                     </Text>
                     <View style={styles.containerInput}>
-                        <Icon style={styles.icon} name="calendar-day" size={20} color='green' />
                         <DatePicker
-                            style={styles.datePickerStyle}
+                            style={styles.kotakInputDate}
                             date={date}
                             mode="date"
-                            placeholder="select date"
                             format="DD/MM/YYYY"
-                            minDate="01-01-1900"
-                            maxDate="01-01-2000"
-                            confirmBtnText="Confirm"
-                            cancelBtnText="Cancel"
+                            minDate="01-01-2000"
+                            maxDate="01-01-2025"
                             customStyles={{
                                 dateIcon: {
                                     position: 'absolute',
-                                    right: -5,
+                                    right: 5,
                                     top: 4,
                                     marginLeft: 0,
                                 },
                                 dateInput: {
                                     borderColor: "gray",
                                     alignItems: "flex-start",
+                                    left: 15,
                                     borderWidth: 0,
-                                    borderBottomWidth: 1,
                                 },
                                 placeholderText: {
                                     fontSize: 17,
@@ -92,16 +87,14 @@ const HomeScreen = ({ navigation }) => {
                                     fontSize: 17,
                                 }
                             }}
-                            onDateChange={(date) => {
-                                setDate(date);
-                            }}
+                            onDateChange={(date) => setDate(date)}
                         />
                     </View>
 
                     <Pressable
                         style={styles.tombolCari}
                         title="cari"
-                        onPress={() => navigation.navigate('JadwalScreen', { lokasiBerangkat: cariLokasiBerangkat, lokasiTujuan: cariLokasiTujuan, tanggalBerangkat: cariTanggalBerangkat })}
+                        onPress={() => navigation.navigate('JadwalScreen', { lokasiBerangkat: cariLokasiBerangkat, lokasiTujuan: cariLokasiTujuan, tanggalBerangkat: date })}
                     >
                         <Text style={styles.tombolCariText}>Cari</Text>
                     </Pressable>

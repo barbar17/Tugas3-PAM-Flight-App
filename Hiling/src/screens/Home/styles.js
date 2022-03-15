@@ -50,6 +50,15 @@ const styles = StyleSheet.create({
         fontSize: 14,
         flex: 2.5,
     },
+    kotakInputDate: {
+        borderWidth: 1,
+        height: 43,
+        width: '100%',
+        borderRadius: 10,
+        borderColor: '#777',
+        fontSize: 14,
+        flex: 2.5,
+    },
     kotakInputText: {
         fontWeight: 'bold',
         fontSize: 18,
@@ -108,7 +117,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         top: 100,
         alignSelf: 'center',
-    }
+    },
 });
 
 export default styles;

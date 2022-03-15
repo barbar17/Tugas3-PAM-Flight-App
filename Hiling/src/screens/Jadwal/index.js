@@ -144,6 +144,7 @@ const Item = ({ maskapai_logo, maskapai_nama, bandara_nama_keberangkatan, bandar
 const JadwalScreen = ({ navigation }) => {
 
     const [filteredData, setfilteredData] = useState([]);
+    const [hasilCariText, sethasilCariText] = useState('');
 
     useEffect(() => {
         filterCari(navigation.getParam('lokasiBerangkat'), navigation.getParam('lokasiTujuan'), navigation.getParam('tanggalBerangkat'));
@@ -160,6 +161,8 @@ const JadwalScreen = ({ navigation }) => {
                 return itemData.indexOf(textData) > -1;
             });
             setfilteredData(newData);
+            return sethasilCariText(navigation.getParam('lokasiBerangkat'));
+
         }
         else if (lokasiTujuan) {
             const newData = Jadwal.filter((item) => {
@@ -168,6 +171,8 @@ const JadwalScreen = ({ navigation }) => {
                 return itemData.indexOf(textData) > -1;
             });
             setfilteredData(newData);
+            return sethasilCariText(navigation.getParam('lokasiTujuan'));
+
         }
         else if (tanggalBerangkat) {
             const newData = Jadwal.filter((item) => {
@@ -176,11 +181,16 @@ const JadwalScreen = ({ navigation }) => {
                 return itemData.indexOf(textData) > -1;
             });
             setfilteredData(newData);
+            return sethasilCariText(navigation.getParam('tanggalBerangkat'));
+
         }
         else {
             setfilteredData(Jadwal);
+            return 'No Parameter'
+
         }
     };
+
 
     const renderItem = ({ item }) => (
         <Item
@@ -202,10 +212,10 @@ const JadwalScreen = ({ navigation }) => {
                 <Icon
                     style={styles.navUser} name="user" size={25} color='white'
                     onPress={() => console.warn("icon user ditekan!")} />
+                <Text style={styles.hasilCari}>
+                    Hasil Pencarian "{hasilCariText}"
+                </Text>
             </View>
-            <Text>
-                Hasil Pencarian dari "{navigation.getParam('lokasiBerangkat')}"
-            </Text>
             <View>
                 <FlatList
                     data={filteredData}
