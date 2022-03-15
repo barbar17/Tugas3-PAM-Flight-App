@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     item: {
-        backgroundColor: 'gold',
+        backgroundColor: 'white',
         height: 100,
         justifyContent: 'center',
         padding: 20,
